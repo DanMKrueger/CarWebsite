@@ -16,7 +16,7 @@ public class CarService {
 
 	public ArrayList<Car> getAllCars() {
 		System.out.println((ArrayList<Car>) carRepo.findAll());
-		return null;
+		return (ArrayList<Car>) carRepo.findAll();
 	}
 
 }
