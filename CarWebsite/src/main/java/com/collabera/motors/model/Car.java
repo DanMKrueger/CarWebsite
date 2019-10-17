@@ -23,7 +23,15 @@ public class Car {
 	private String description;
 	@Column
 	private String picture;
+	@Column
+	private String price;
 
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
 	public int getId() {
 		return id;
 	}
@@ -105,7 +113,7 @@ public class Car {
 	@Override
 	public String toString() {
 		return "[id=" + id + ", make=" + make + ", model=" + model + ", car_year=" + car_year + ", color=" + color
-				+ ", description=" + description + ", picture=" + picture + "]";
+				+ ", description=" + description + ", picture=" + picture + ", price=" + price + "]";
 	}
 
 }

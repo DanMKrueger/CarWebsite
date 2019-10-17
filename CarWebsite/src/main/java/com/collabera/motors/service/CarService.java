@@ -31,7 +31,7 @@ public class CarService {
 		// Create a new car, and set it to be the car that the person was referencing by
 		// getting the car from the database that has the same ID.
 		Car enteredCar = carRepo.getOne(Integer.parseInt(onlyValues.get(0)));
-		System.out.println(enteredCar);
+		//System.out.println(enteredCar);
 		
 		// Set all the attributes of the car to the values they should be based on what
 		// we got from the front end.
@@ -42,6 +42,8 @@ public class CarService {
 		enteredCar.setColor(onlyValues.get(4));
 		enteredCar.setDescription(onlyValues.get(5));
 		enteredCar.setPicture(onlyValues.get(6));
+		System.out.println(onlyValues.get(7));
+		enteredCar.setPrice(onlyValues.get(7));
 		
 		System.out.println(enteredCar);
 
@@ -71,6 +73,7 @@ public class CarService {
 		newCar.setColor(onlyValues.get(3));
 		newCar.setDescription(onlyValues.get(4));
 		newCar.setPicture(onlyValues.get(5));
+		newCar.setPrice(onlyValues.get(6));
 		
 		// Take the new Car, and save it to the database
 		carRepo.save(newCar);
@@ -97,7 +100,7 @@ public class CarService {
 		//System.out.println(mySubstr);
 		
 		// Potentially parse through the entered string if neccessary
-		String delim = "[,]";
+		String delim = ",\\s";
 		String[] parsedData = mySubstr.split(delim);
 		//System.out.println(enteredString.toString());
 		ArrayList<String> onlyValues = new ArrayList<>();
