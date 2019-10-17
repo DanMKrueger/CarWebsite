@@ -1,0 +1,9 @@
+#logo-text {
+    font-family: 'Faster One', cursive;
+    color: #ffbe25;
+    font-size: 1.5em;
+}
+
+.active {
+    background-color:rgb(53, 52, 52);
+}
