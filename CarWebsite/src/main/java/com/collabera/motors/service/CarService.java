@@ -14,22 +14,22 @@ public class CarService {
 	@Autowired 
 	private CarRepository carRepo;
 
+/************************************* Get All Cars method *************************************/
+
 	public ArrayList<Car> getAllCars() {
-		ArrayList<Car> allCars = (ArrayList<Car>) carRepo.findAll();
-		for(int i = 0; i < allCars.size(); i++) {
-			Car newCar = allCars.get(i);
-			System.out.println("Id: " + newCar.getId() + " Make:" + newCar.getMake());
-			//System.out.println(allCars.get(i));
-		}
+		// Make an array list, and populate it with all the info from our database
 		return (ArrayList<Car>) carRepo.findAll();
 	}
 
+/************************************* Update Car method *************************************/
+
 	public String adminUpdate(String enteredString) {
 		
+		// Make a new Array List, and run it through the extract method made below to get all the Values
 		ArrayList<String> onlyValues = extracted(enteredString);
 		
-		// Get the id of the car that was sent over, and search through the database for that specific car
-		
+		// Create a new car, and set it to be the car that the person was referencing by
+		// getting the car from the database that has the same ID.
 		Car enteredCar = carRepo.getOne(Integer.parseInt(onlyValues.get(0)));
 		System.out.println(enteredCar);
 		
@@ -50,7 +50,9 @@ public class CarService {
 		return "Updated!";
 	}
 
+/************************************* Add Car method *************************************/
 
+	
 	public String adminAdd(String enteredString) {
 		
 		ArrayList<String> onlyValues = extracted(enteredString);
@@ -73,6 +75,8 @@ public class CarService {
 		return "Added";
 	}
 
+/************************************* Remove Car method *************************************/
+
 	public String adminRemove(String enteredString) {
 		
 		// Take the ID that was passed in, and search for it in the database to delete it.
@@ -80,6 +84,9 @@ public class CarService {
 		
 		return "Removed";
 	}
+	
+	
+/************************************* Extract method to get values out of entered array *************************************/
 	
 	public ArrayList<String> extracted(String enteredString) {
 		String mySubstr;
