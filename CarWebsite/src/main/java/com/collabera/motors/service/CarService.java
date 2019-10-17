@@ -33,6 +33,8 @@ public class CarService {
 		Car enteredCar = carRepo.getOne(Integer.parseInt(onlyValues.get(0)));
 		System.out.println(enteredCar);
 		
+		// Set all the attributes of the car to the values they should be based on what
+		// we got from the front end.
 		enteredCar.setId(Integer.parseInt(onlyValues.get(0)));
 		enteredCar.setMake(onlyValues.get(1));
 		enteredCar.setModel(onlyValues.get(2));
@@ -43,7 +45,7 @@ public class CarService {
 		
 		System.out.println(enteredCar);
 
-		
+		// Save the car to the database to finalize the update.
 		carRepo.save(enteredCar);
 		
 				
@@ -55,13 +57,14 @@ public class CarService {
 	
 	public String adminAdd(String enteredString) {
 		
+		// Create a new Array List, and run it through the extract method to 
+		// get all of the values from what was entered to add.
 		ArrayList<String> onlyValues = extracted(enteredString);
 		
 		// Create a new Car
 		Car newCar = new Car();
 		
 		// Take that Car, and populate it with the info that was passed to us from the front end
-		
 		newCar.setMake(onlyValues.get(0));
 		newCar.setModel(onlyValues.get(1));
 		newCar.setCar_year(onlyValues.get(2));
