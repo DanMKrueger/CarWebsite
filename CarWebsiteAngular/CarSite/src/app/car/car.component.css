@@ -10,8 +10,19 @@
 
 #description{
   font-family: 'Times New Roman';
-  color: #ffbe25;
+  color: rgb(107, 218, 112);
   font-size: 1.5em;
-  align-self: right;
+  align-content: right;
 
 }
+
+.shadowing{
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+/* .blankRow{
+  margin: 10px;
+} */
