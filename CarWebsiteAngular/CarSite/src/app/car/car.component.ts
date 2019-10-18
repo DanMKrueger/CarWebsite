@@ -18,7 +18,7 @@ export class CarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.carHttp.get('http://localhost:8080/cars').subscribe((response) => {
+    this.carHttp.get('http://localhost:8080/car').subscribe((response) => {
       this.response = response[0];
       console.log(this.response);
     });

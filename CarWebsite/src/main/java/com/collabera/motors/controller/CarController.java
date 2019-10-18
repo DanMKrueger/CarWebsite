@@ -23,7 +23,7 @@ public class CarController {
 	@Autowired
 	private CarService carService;
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/cars")
+	@RequestMapping(method = RequestMethod.GET, value = "/car")
 	public @ResponseBody ArrayList<Car> getRecipes() {
 		return carService.getAllCars();
 	}
