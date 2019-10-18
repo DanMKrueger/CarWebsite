@@ -99,7 +99,7 @@ public class CarService {
 		mySubstr = enteredString.substring(1, enteredString.length()-1);
 		//System.out.println(mySubstr);
 		
-		// Potentially parse through the entered string if neccessary
+		// Potentially parse through the entered string if necessary
 		String delim = ",\\s";
 		String[] parsedData = mySubstr.split(delim);
 		//System.out.println(enteredString.toString());
