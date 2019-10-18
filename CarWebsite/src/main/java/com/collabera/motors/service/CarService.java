@@ -2,6 +2,8 @@ package com.collabera.motors.service;
 
 import java.util.ArrayList;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -89,6 +91,20 @@ public class CarService {
 		//carRepo.deleteById(Integer.parseInt(enteredString));
 		
 		return "Removed";
+	}
+	
+/************************************* Get a Car method *************************************/
+
+	
+	public String getCar(int id) {
+		try {
+			carRepo.getOne(id);
+			Car requestedCar = carRepo.getOne(id);
+			return requestedCar.toString();
+
+		}catch(EntityNotFoundException e) {
+			return "Id Not Found!";
+		}
 	}
 	
 	

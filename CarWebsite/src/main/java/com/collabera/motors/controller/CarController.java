@@ -3,6 +3,7 @@ package com.collabera.motors.controller;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -41,5 +42,15 @@ public class CarController {
 	public @ResponseBody String removePage(@RequestBody String enteredString) throws Exception {
 		return carService.adminRemove(enteredString);
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/car{id}")
+    public @ResponseBody String getCar(@PathVariable("id") Integer id) {
+		if(id != null) {
+	        return carService.getCar(id);                              
+		}
+		else {
+			return "Id is null.";
+		}
+    }
 	
 }
