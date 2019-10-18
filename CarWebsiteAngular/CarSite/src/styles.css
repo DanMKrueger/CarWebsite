@@ -1,10 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-html{
+/* html, body{
     background-image: url('/assets/background.jpg');
     background-size: cover;
-    /* background-repeat: no-repeat; */
+    /* background-repeat: no-repeat;
     height: 100%;
     width: 100%;
-    /* scroll-margin: no; */
-    /* overflow-x: hidden; */
-}
+    scroll-margin: no;
+    overflow-x: hidden; 
+} */
+
+html, body { 
+    background: url('assets/background.jpg') no-repeat center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x: hidden; 
+  }
