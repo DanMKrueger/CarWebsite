@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-all-cars',
   templateUrl: './all-cars.component.html',
   styleUrls: ['./all-cars.component.css']
 })
+
 export class AllCarsComponent implements OnInit {
 
   response: any;
@@ -26,9 +28,9 @@ export class AllCarsComponent implements OnInit {
   clickFunction(id){
     this.id = id;
     this.allcarsHttp.get('http://localhost:8080/car' + this.id, {responseType: 'text'}).subscribe((response) => {
-      this.responsetwo = response;
+      this.responsetwo = JSON.parse(response);
       console.log(this.responsetwo);
-      console.log(this.responsetwo.model);
+      console.log(this.responsetwo.id);
     });
   }
 

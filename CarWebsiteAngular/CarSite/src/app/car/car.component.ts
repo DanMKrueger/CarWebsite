@@ -1,6 +1,9 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { AllCarsComponent } from '../all-cars/all-cars.component';
+// import { responsetwo } from './all-cars-component';
+
 @Component({
   selector: 'app-car',
   templateUrl: './car.component.html',
@@ -11,6 +14,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class CarComponent implements OnInit {
 
+  private passedCar: AllCarsComponent["responsetwo"];
   response: any;
 
   constructor(

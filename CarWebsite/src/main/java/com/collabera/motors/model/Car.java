@@ -16,19 +16,19 @@ public class Car {
 
 	@Id
 	private int id;
-	@Column
+	@Column(name="make")
 	private String make;
-	@Column
+	@Column(name="model")
 	private String model;
-	@Column
+	@Column(name="car_year")
 	private String car_year;
-	@Column
+	@Column(name="color")
 	private String color;
-	@Column
+	@Column(name="description")
 	private String description;
-	@Column
+	@Column(name="picture")
 	private String picture;
-	@Column
+	@Column(name="price")
 	private String price;
 
 	public String getPrice() {
