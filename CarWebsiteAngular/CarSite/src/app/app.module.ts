@@ -7,13 +7,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ManufacturerListComponent } from './manufacturer-list/manufacturer-list.component';
 import { CarComponent } from './car/car.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ManufacturerListComponent,
-    CarComponent
+    CarComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
