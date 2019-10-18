@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-all-cars',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllCarsComponent implements OnInit {
 
-  constructor() { }
+  response: any;
+
+  constructor(private allcarsHttp: HttpClient) { 
+    
+  }
 
   ngOnInit() {
+    this.allcarsHttp.get('http://localhost:8080/car').subscribe((response) => {
+      this.response = response;
+      console.log(this.response);
+    });
   }
 
 }

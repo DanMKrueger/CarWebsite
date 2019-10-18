@@ -1,1 +1,11 @@
-<p>all-cars works!</p>
+<div class="container-fluid row myTopDiv">
+
+    <div *ngFor="let res of response" class="myContainerDivs col-md-4">
+
+            <p hidden id={{res?.id}}></p>
+            <p class="modelParagraphs shadowing p-2">{{ res?.model }}</p>
+            <img src={{res?.picture}} class="carImages p-2">
+
+    </div>
+
+</div>
