@@ -18,6 +18,7 @@ public class ManufacturerController {
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/getmanufacturers")
 	public @ResponseBody ArrayList<Manufacturer> getManufacturers() {
+		System.out.println("Request received");
 		return manuService.getAllManufacturers();
 	}
 
