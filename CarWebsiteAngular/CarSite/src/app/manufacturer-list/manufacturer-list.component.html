@@ -1,7 +1,12 @@
 <div class="container-fluid my-4">
-    <div class="row">
+    <div class="row" id="manufacturer-list">
         <div class="col d-inline" *ngFor="let manufacturer of manufacturers">
-            <img class="img-fluid" src='{{manufacturer?.image}}'><img>
+            <img 
+            id = '{{manufacturer?.make}}' class="img-fluid"
+            (mouseover) = "hovering = ($event.target.id)" (mouseout)="hovering = ''" 
+            [ngClass] = "{'animated pulse infinite' : hovering === manufacturer.make }"
+            src='{{manufacturer?.image}}'>
+            <img>
         </div>
     </div>
 </div>
