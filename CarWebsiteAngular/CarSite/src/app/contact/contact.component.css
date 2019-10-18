@@ -4,11 +4,21 @@
 }
 
 .contactHeading{
+    font-size: 225%;
     font-family: 'Times New Roman', Times, serif;
-    color: blue;
+    color: #ffbe25;
 }
 
 .contactParagraphs{
+    font-size: 150%;
     font-family: 'Times New Roman', Times, serif;
-    color: blue;
+    color: #ffbe25;
 }
+
+.shadowing{
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
