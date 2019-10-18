@@ -1,0 +1,30 @@
+.modelParagraphs{
+    color: #ffbe25;
+    text-align: center;
+}
+.shadowing{
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+
+.carImages{
+    width: 50%;
+    height: 50%;
+    border-radius: 35%;
+    align-self: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.myContainerDivs{
+    width: 75%;
+    height: 75%;
+}
+
+.myTopDiv{
+    align-content: center;
+}

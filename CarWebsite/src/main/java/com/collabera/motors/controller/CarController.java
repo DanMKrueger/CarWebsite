@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.collabera.motors.model.Car;
 import com.collabera.motors.repository.CarRepository;
 import com.collabera.motors.service.CarService;
+import com.fasterxml.jackson.databind.JsonMappingException;
 
 @RestController
 public class CarController {
@@ -44,12 +45,13 @@ public class CarController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/car{id}")
-    public @ResponseBody String getCar(@PathVariable("id") Integer id) {
+    public @ResponseBody Car getCar(@PathVariable("id") Integer id) throws JsonMappingException {
 		if(id != null) {
 	        return carService.getCar(id);                              
 		}
 		else {
-			return "Id is null.";
+			//return "Id is null.";
+			return null;
 		}
     }
 	
