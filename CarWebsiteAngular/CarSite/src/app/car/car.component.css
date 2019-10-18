@@ -1,5 +1,17 @@
-#car-page-font{
+.car-page-font{
   font-family: 'Comic Sans MS';
   color: #ffbe25;
   font-size: 2em;
+}
+
+.round-corners{
+  border-radius: 35%;
+}
+
+#description{
+  font-family: 'Times New Roman';
+  color: #ffbe25;
+  font-size: 1.5em;
+  align-self: right;
+
 }
