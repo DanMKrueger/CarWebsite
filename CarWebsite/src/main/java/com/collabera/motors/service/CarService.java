@@ -5,10 +5,12 @@ import java.util.ArrayList;
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.converter.HttpMessageNotWritableException;
 import org.springframework.stereotype.Service;
 
 import com.collabera.motors.model.Car;
 import com.collabera.motors.repository.CarRepository;
+import com.fasterxml.jackson.databind.JsonMappingException;
 
 @Service
 public class CarService {
@@ -96,14 +98,20 @@ public class CarService {
 /************************************* Get a Car method *************************************/
 
 	
-	public String getCar(int id) {
+	public Car getCar(int id) throws JsonMappingException {
 		try {
 			carRepo.getOne(id);
 			Car requestedCar = carRepo.getOne(id);
-			return requestedCar.toString();
+			System.out.println("HERERERE");
+			return requestedCar;
+			//return requestedCar.toString();
 
 		}catch(EntityNotFoundException e) {
-			return "Id Not Found!";
+			return null;
+			//return "Id Not Found!";
+		}
+		catch(HttpMessageNotWritableException e) {
+			return null;
 		}
 	}
 	
