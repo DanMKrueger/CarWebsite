@@ -6,6 +6,7 @@ import { AppModule } from './app.module';
 import { HomeComponent } from './home/home.component';
 import { CarComponent } from './car/car.component';
 import { AllCarsComponent } from './all-cars/all-cars.component';
+import { RequestedManufacturerComponent } from './requested-manufacturer/requested-manufacturer.component';
 
 
 const routes: Routes = [
@@ -13,8 +14,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'home', component: HomeComponent },
   { path: 'car', component: CarComponent },
-  { path: 'allcars', component: AllCarsComponent}
-
+  { path: 'allcars', component: AllCarsComponent},
+  { path: 'requestedmanufacturer', component: RequestedManufacturerComponent}
 
 
 ];
