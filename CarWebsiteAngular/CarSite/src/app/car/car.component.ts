@@ -22,7 +22,7 @@ export class CarComponent implements OnInit {
       this.response = response[13];
       console.log(this.response);
     });
-
+ 
   }
 
 
