@@ -25,6 +25,7 @@ export class CarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // Updated ngOnInit
     this.data.currentMessage.subscribe( message => this.message = message);
     if(this.message == -1){
       this.router.navigateByUrl('/allcars');
