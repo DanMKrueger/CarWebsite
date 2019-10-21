@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,12 +10,12 @@ import { Router } from '@angular/router';
 })
 export class ManufacturerListComponent implements OnInit {
 
-  hovering: string;
-  manufacturers: any;
-  response: any;
-  manke: string;
+  hovering : String;
+  manufacturers : any;
+  response : any;
+  manuResponse: any;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http : HttpClient, private data: DataService, private router: Router) { }
 
   ngOnInit() {
    this.response = this.http.get('http://localhost:8080/getmanufacturers')
@@ -23,8 +24,10 @@ export class ManufacturerListComponent implements OnInit {
     })
   }
 
-  makeClicked() {
-    this.
+  manufacturerClicked(makeClicked: string){
+    this.data.changeManufacturer(makeClicked);
+    console.log(makeClicked);
+    this.router.navigateByUrl('/requestedmanufacturer');
   }
 
 }
