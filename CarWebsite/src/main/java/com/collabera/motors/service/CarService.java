@@ -102,7 +102,7 @@ public class CarService {
 		try {
 			carRepo.getOne(id);
 			Car requestedCar = carRepo.getOne(id);
-			System.out.println("HERERERE");
+			System.out.println(requestedCar.toString());
 			return requestedCar;
 			//return requestedCar.toString();
 
