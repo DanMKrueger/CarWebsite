@@ -27,7 +27,9 @@ export class ManufacturerListComponent implements OnInit {
   manufacturerClicked(makeClicked: string){
     this.data.changeManufacturer(makeClicked);
     console.log(makeClicked);
-    this.router.navigateByUrl('/requestedmanufacturer')
+    this.router.navigateByUrl('/home', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/requestedmanufacturer']);
+  }); 
   }
 
 }

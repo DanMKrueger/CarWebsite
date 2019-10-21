@@ -12,7 +12,7 @@ export class RequestedManufacturerComponent implements OnInit {
 
   requestedManufacturer: any;
   allCars: any;
-
+  
   constructor(private router: Router, private data: DataService, private http: HttpClient) { 
   }
 
