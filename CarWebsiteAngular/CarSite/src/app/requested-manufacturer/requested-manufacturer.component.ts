@@ -12,7 +12,7 @@ export class RequestedManufacturerComponent implements OnInit {
 
   requestedManufacturer: any;
   allCars: any;
-  
+
   constructor(private router: Router, private data: DataService, private http: HttpClient) { 
   }
 
@@ -29,7 +29,9 @@ export class RequestedManufacturerComponent implements OnInit {
   }
 
   manufacturerClicked(id: number){
-    console.log(id);
+      this.data.changeMessage(id);
+      this.router.navigateByUrl('/car');
+
   }
 
 }
