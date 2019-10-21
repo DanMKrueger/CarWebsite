@@ -10,6 +10,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { AllCarsComponent } from './all-cars/all-cars.component';
+import { DataService } from './data.service'
 
 @NgModule({
   declarations: [
@@ -25,8 +26,8 @@ import { AllCarsComponent } from './all-cars/all-cars.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
-  ],
-  providers: [HttpClientModule],
+    ],
+  providers: [HttpClientModule, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
