@@ -8,5 +8,50 @@
     </div>
     <td><p id="description" class="shadowing container">{{response?.description}}</p></td>
   </tr>
+  <button type="button" class="btn btn-primary" (click)="toggleCollapse()">Buy Now!</button>
+
+  <div class="container" *ngIf="!isCollapsed">
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input type="text" class="form-control" placeholder="First Name">
+      </div>
+      <div class="form-group col-md-6">
+          <input type="text" class="form-control" placeholder="Last Name">
+      </div>
+    </div>
+      <div class="form-group">
+          <input type="email" class="form-control" placeholder="Email">
+      </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control" placeholder="Credit Card">
+        </div>
+        <div class="form-group col-md-2">
+            <input type="text" class="form-control" placeholder="CVV">
+        </div>
+        <div class="form-group col-md-4">
+            <input type="text" class="form-control" placeholder="Expiration Date mm/yy">
+        </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+          <input type="streetview" class="form-control" placeholder="Street Address">
+      </div>
+      <div class="form-group col-md-4">
+          <input type="location_city" class="form-control" placeholder="City">
+      </div>
+      <div class="form-group col-md-2">
+          <input type="text" class="form-control" placeholder="State">
+      </div>
+      <div class="form-group col-md-2">
+          <input type="zip" class="form-control" placeholder="Zip">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Confirm</button>
+
+  </form>
+  </div>
 </div>
 
