@@ -1,6 +1,7 @@
 .fullContactComponent{
     /* height: 100%;
     background-color: coral; */
+    align-self: center;
     width: 25%;
     margin: 5px;
     padding: 5px;
