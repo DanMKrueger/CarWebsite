@@ -1,12 +1,57 @@
 <div class="container-fluid float-left shadowing">
-  <h1 class="container shadowing car-page-font">{{response?.make}} {{response?.model}}</h1>
+  <h1 class="container shadowing car-page-font">{{response?.car_year}} {{response?.make}} {{response?.model}}</h1>
   <h2 class="container shadowing car-page-font">{{response?.price}}</h2>
   <tr>
-    <td><img src={{response?.picture}} class="round-corners container"></td> 
+    <td><img src={{response?.picture}} class="round-corners container"></td>
     <div class="blankRow mx-5 container">
     <td></td>
     </div>
     <td><p id="description" class="shadowing container">{{response?.description}}</p></td>
   </tr>
+  <button type="button" class="btn btn-primary" (click)="toggleCollapse()">Buy Now!</button>
+
+  <div class="container" *ngIf="!isCollapsed">
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input type="text" class="form-control" placeholder="First Name">
+      </div>
+      <div class="form-group col-md-6">
+          <input type="text" class="form-control" placeholder="Last Name">
+      </div>
+    </div>
+      <div class="form-group">
+          <input type="email" class="form-control" placeholder="Email">
+      </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control" placeholder="Credit Card">
+        </div>
+        <div class="form-group col-md-2">
+            <input type="text" class="form-control" placeholder="CVV">
+        </div>
+        <div class="form-group col-md-4">
+            <input type="text" class="form-control" placeholder="Expiration Date mm/yy">
+        </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+          <input type="streetview" class="form-control" placeholder="Street Address">
+      </div>
+      <div class="form-group col-md-4">
+          <input type="location_city" class="form-control" placeholder="City">
+      </div>
+      <div class="form-group col-md-2">
+          <input type="text" class="form-control" placeholder="State">
+      </div>
+      <div class="form-group col-md-2">
+          <input type="zip" class="form-control" placeholder="Zip">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Confirm</button>
+
+  </form>
+  </div>
 </div>
 
