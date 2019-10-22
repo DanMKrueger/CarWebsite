@@ -39,10 +39,6 @@ public class CarController {
 		return carService.adminAdd(enteredString);
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE, value="/removecar")
-	public @ResponseBody String removePage(@RequestBody String enteredString) throws Exception {
-		return carService.adminRemove(enteredString);
-	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/car{id}")
     public @ResponseBody Car getCar(@PathVariable("id") Integer id) throws JsonMappingException {
@@ -52,6 +48,16 @@ public class CarController {
 		else {
 			//return "Id is null.";
 			return null;
+		}
+    }
+	
+	@RequestMapping(method = RequestMethod.DELETE, value = "/removecar{id}")
+    public @ResponseBody String removeCar(@PathVariable("id") Integer id) throws JsonMappingException {
+		if(id != null) {
+	        return carService.adminRemove(id);                              
+		}
+		else {
+			return "";
 		}
     }
 	

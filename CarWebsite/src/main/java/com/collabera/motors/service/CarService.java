@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.converter.HttpMessageNotWritableException;
 import org.springframework.stereotype.Service;
 
@@ -87,12 +88,15 @@ public class CarService {
 
 /************************************* Remove Car method *************************************/
 
-	public String adminRemove(String enteredString) {
+	public String adminRemove(Integer enteredId) {
 		
 		// Take the ID that was passed in, and search for it in the database to delete it.
-		//carRepo.deleteById(Integer.parseInt(enteredString));
-		
-		return "Removed";
+		try {
+			carRepo.deleteById(enteredId);
+			return "Removed";
+		}catch(EmptyResultDataAccessException e) {
+			return "No car with that ID found!";
+		}
 	}
 	
 /************************************* Get a Car method *************************************/

@@ -1,10 +1,18 @@
 .fullContactComponent{
     /* height: 100%;
     background-color: coral; */
+    align-self: center;
+    width: 25%;
+    margin: 5px;
+    padding: 5px;
+    border: 5px solid black;
+    border-radius: 10px;
+    text-align: center;
+    background-image: linear-gradient(red, grey);
 }
 
 .contactHeading{
-    font-size: 225%;
+    font-size: 250%;
     font-family: 'Times New Roman', Times, serif;
     color: #ffbe25;
 }

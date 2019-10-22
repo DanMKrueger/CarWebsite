@@ -11,7 +11,8 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { AllCarsComponent } from './all-cars/all-cars.component';
 import { DataService } from './data.service';
-import { RequestedManufacturerComponent } from './requested-manufacturer/requested-manufacturer.component'
+import { RequestedManufacturerComponent } from './requested-manufacturer/requested-manufacturer.component';
+import { AdminComponent } from './admin/admin.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RequestedManufacturerComponent } from './requested-manufacturer/request
     ContactComponent,
     HomeComponent,
     AllCarsComponent,
-    RequestedManufacturerComponent
+    RequestedManufacturerComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
