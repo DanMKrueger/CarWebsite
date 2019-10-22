@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-admin',
@@ -31,6 +32,7 @@ export class AdminComponent implements OnInit {
 
   editClicked(id: number){
     console.log("Clicked edit on car: " + id);
+    document.getElementById(id.toString()).after('<p>Test</p>');
   }
 
   deleteClicked(id: number){
