@@ -24,9 +24,9 @@ public class User {
 	@Column(name="last_name")
 	private String last_name;
 	@Column(name="admin")
-	private Boolean admin;
+	private int admin;
 	
-	public User(int id, String user_name, String user_password, String first_name, String last_name, Boolean admin) {
+	public User(int id, String user_name, String user_password, String first_name, String last_name, int admin) {
 		super();
 		this.id = id;
 		this.user_name = user_name;
@@ -43,7 +43,7 @@ public class User {
 		this.user_password = "";
 		this.first_name = "";
 		this.last_name = "";
-		this.admin = false;
+		this.admin = 0;
 	}
 
 	@Override
@@ -92,11 +92,11 @@ public class User {
 		this.last_name = last_name;
 	}
 
-	public Boolean getAdmin() {
+	public int getAdmin() {
 		return admin;
 	}
 
-	public void setAdmin(Boolean admin) {
+	public void setAdmin(int admin) {
 		this.admin = admin;
 	}
 
