@@ -8,6 +8,16 @@
   border-radius: 35%;
 }
 
+.buy-now-div{
+  text-align: center;
+}
+
+.buy-now-button{
+  position: relative;
+  left: 40%;
+}
+
+
 #description{
   font-family: 'Be Vietnam', sans-serif;;
   color: rgb(25, 206, 227);

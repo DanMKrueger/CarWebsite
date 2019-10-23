@@ -13,7 +13,7 @@ import { DataService } from '../data.service';
 
 
 
-export class CarComponent implements OnInit {
+export class CarComponent implements OnInit  {
 
   response: any;
   message: number;
@@ -22,11 +22,16 @@ export class CarComponent implements OnInit {
   constructor(
     private carHttp: HttpClient,
     private router: Router,
-    private data: DataService
+    private data: DataService,
+    private ngModule: NgModule
   ) { }
 
   toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  log(x) {
+    console.log(x);
   }
 
 

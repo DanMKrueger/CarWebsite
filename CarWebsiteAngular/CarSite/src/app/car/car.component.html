@@ -8,13 +8,18 @@
     </div>
     <td><p id="description" class="shadowing container">{{response?.description}}</p></td>
   </tr>
-  <button type="button" class="btn btn-primary" (click)="toggleCollapse()">Buy Now!</button>
+  <div class="buy-now-div">
+      <button type="button" class="btn btn-primary buy-now-button" (click)="toggleCollapse()">Buy Now!</button>
+  </div>
 
   <div class="container" *ngIf="!isCollapsed">
   <form>
     <div class="form-row">
       <div class="form-group col-md-6">
-        <input type="text" class="form-control" placeholder="First Name">
+        <input required ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)" type="text" id="firstName" class="form-control" placeholder="First Name">
+        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+          First Name is required
+        </div>
       </div>
       <div class="form-group col-md-6">
           <input type="text" class="form-control" placeholder="Last Name">
