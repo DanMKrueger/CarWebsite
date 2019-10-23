@@ -61,19 +61,16 @@ export class AdminComponent implements OnInit {
     }
   }
 
-  // submitEdit(id, make,model, car_year, color, description, picture, price){
-  //   this.fullString = "[id=" + id  + ", make=" + make + ", model=" +model+", car_year=" +car_year+", color=" +color+", description=" +description+", picture=" +picture+", price=" +price + "]";
-  //   console.log(this.fullString);
-  //   this.http.put('http://localhost:8080/updatecar', this.fullString).subscribe((response) => {
-  //     console.log(response);
-  //   });
-  // }
-
   submitEdit(f: NgForm){
     this.fullString = "[id=" + f.value.id  + ", make=" + f.value.make + ", model=" +f.value.model+", car_year=" +f.value.car_year+", color=" +f.value.color+", description=" +f.value.description+", picture=" +f.value.picture+", price=" +f.value.price + "]";
     console.log(this.fullString);
     this.http.put('http://localhost:8080/updatecar', this.fullString).subscribe((response) => {
       console.log(response);
     });
+
+    setTimeout(() => this.http.get('http://localhost:8080/car').subscribe((response) => {
+        console.log(response);
+        this.allCars = response;
+      }), 1000);
   }
 }

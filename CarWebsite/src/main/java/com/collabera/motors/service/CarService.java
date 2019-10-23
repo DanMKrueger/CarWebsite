@@ -47,10 +47,10 @@ public class CarService {
 		enteredCar.setColor(onlyValues.get(4));
 		enteredCar.setDescription(onlyValues.get(5));
 		enteredCar.setPicture(onlyValues.get(6));
-		System.out.println(onlyValues.get(7));
+		//System.out.println(onlyValues.get(7));
 		enteredCar.setPrice(onlyValues.get(7));
 		
-		System.out.println(enteredCar);
+		//System.out.println(enteredCar);
 
 		// Save the car to the database to finalize the update.
 		carRepo.save(enteredCar);
@@ -106,7 +106,7 @@ public class CarService {
 		try {
 			carRepo.getOne(id);
 			Car requestedCar = carRepo.getOne(id);
-			System.out.println(requestedCar.toString());
+			//System.out.println(requestedCar.toString());
 			return requestedCar;
 			//return requestedCar.toString();
 
@@ -126,7 +126,7 @@ public class CarService {
 		System.out.println(enteredString);
 		String mySubstr;
 		mySubstr = enteredString.substring(1, enteredString.length()-1);
-		System.out.println(mySubstr);
+		//System.out.println(mySubstr);
 		
 		// Potentially parse through the entered string if necessary
 		String delim = ",\\s";
