@@ -13,6 +13,7 @@ export class AdminComponent implements OnInit {
   response: any;
   allCars: any;
   conf: any;
+  isCollapsed = true;
 
   constructor(private router: Router, private http: HttpClient) {
    }
@@ -31,8 +32,13 @@ export class AdminComponent implements OnInit {
   }
 
   editClicked(id: number){
+    var x = document.getElementById(id.toString());
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
     console.log("Clicked edit on car: " + id);
-    document.getElementById(id.toString()).after('<p>Test</p>');
   }
 
   deleteClicked(id: number){
