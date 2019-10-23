@@ -14,6 +14,7 @@ import { AllCarsComponent } from './all-cars/all-cars.component';
 import { DataService } from './data.service';
 import { RequestedManufacturerComponent } from './requested-manufacturer/requested-manufacturer.component';
 import { LoginComponent } from './login/login.component'
+import { AdminComponent } from './admin/admin.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoginComponent } from './login/login.component'
     HomeComponent,
     AllCarsComponent,
     RequestedManufacturerComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

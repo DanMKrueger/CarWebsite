@@ -29,7 +29,7 @@ export class ManufacturerListComponent implements OnInit {
     console.log(makeClicked);
     this.router.navigateByUrl('/home', { skipLocationChange: true }).then(() => {
       this.router.navigate(['/requestedmanufacturer']);
-  }); 
+  });
   }
 
 }

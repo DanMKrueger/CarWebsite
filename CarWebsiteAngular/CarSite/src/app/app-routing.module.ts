@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { CarComponent } from './car/car.component';
 import { AllCarsComponent } from './all-cars/all-cars.component';
 import { RequestedManufacturerComponent } from './requested-manufacturer/requested-manufacturer.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'car', component: CarComponent },
   { path: 'allcars', component: AllCarsComponent},
-  { path: 'requestedmanufacturer', component: RequestedManufacturerComponent}
+  { path: 'requestedmanufacturer', component: RequestedManufacturerComponent},
+  { path: 'admin', component: AdminComponent }
 
 
 ];

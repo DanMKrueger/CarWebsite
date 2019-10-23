@@ -20,4 +20,5 @@ export class DataService{
     changeManufacturer(manu: string){
         this.manufacturerSource.next(manu);
     }
+
 }

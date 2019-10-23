@@ -17,12 +17,18 @@ export class CarComponent implements OnInit {
 
   response: any;
   message: number;
+  isCollapsed = true;
 
   constructor(
     private carHttp: HttpClient,
     private router: Router,
     private data: DataService
   ) { }
+
+  toggleCollapse() {
+    this.isCollapsed = !this.isCollapsed;
+  }
+
 
   ngOnInit() {
     // Updated ngOnInit
