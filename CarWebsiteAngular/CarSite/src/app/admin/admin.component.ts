@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { $ } from 'protractor';
 
 @Component({
@@ -14,6 +14,7 @@ export class AdminComponent implements OnInit {
   allCars: any;
   conf: any;
   isCollapsed = true;
+  fullString: any;
 
   constructor(private router: Router, private http: HttpClient) {
    }
@@ -56,5 +57,13 @@ export class AdminComponent implements OnInit {
     }else{
       console.log("Backed out of delete");
     }
+  }
+
+  submitEdit(id, make,model, car_year, color, description, picture, price){
+    this.fullString = "[id=" + id  + ", make=" + make + ", model=" +model+", car_year=" +car_year+", color=" +color+", description=" +description+", picture=" +picture+", price=" +price + "]";
+    console.log(this.fullString);
+    this.http.put('http://localhost:8080/updatecar', this.fullString).subscribe((response) => {
+      console.log(response);
+    });
   }
 }

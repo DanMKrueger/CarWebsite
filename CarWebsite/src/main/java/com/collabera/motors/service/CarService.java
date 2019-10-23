@@ -123,9 +123,10 @@ public class CarService {
 /************************************* Extract method to get values out of entered array *************************************/
 	
 	public ArrayList<String> extracted(String enteredString) {
+		System.out.println(enteredString);
 		String mySubstr;
 		mySubstr = enteredString.substring(1, enteredString.length()-1);
-		//System.out.println(mySubstr);
+		System.out.println(mySubstr);
 		
 		// Potentially parse through the entered string if necessary
 		String delim = ",\\s";

@@ -31,6 +31,7 @@ public class CarController {
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/updatecar")
 	public @ResponseBody String updatePage(@RequestBody String enteredString) throws Exception {
+		System.out.println("HERE");
 		return carService.adminUpdate(enteredString);
 	}
 	
