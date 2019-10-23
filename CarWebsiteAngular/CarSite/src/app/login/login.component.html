@@ -1,0 +1,19 @@
+<li>
+    <form #loginForm = "ngForm" (ngSubmit)="login()" class="py-4">
+        <div class="form-row">
+
+            <div class="col">
+                <input name="username" ngModel required #user="ngModel" type="text" class="form-control" placeholder="Username">
+            </div>
+
+            <div class="col">
+                <input name="pass" ngModel type="text" class="form-control" placeholder="Password">
+            </div>
+
+            <div class="col">
+                <button class='btn btn-warning mr-2' type='button'>Login</button>
+            </div>
+
+        </div>
+    </form>
+</li>
