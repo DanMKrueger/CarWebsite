@@ -36,7 +36,7 @@ import { AddComponent } from './add/add.component'
     AppRoutingModule,
     HttpClientModule,
     FormsModule
-    ],
+  ],
   providers: [HttpClientModule, DataService],
   bootstrap: [AppComponent]
 })

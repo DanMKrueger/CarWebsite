@@ -3,6 +3,9 @@ package com.collabera.motors.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,17 +17,21 @@ public class UserService {
 	
 	@Autowired
 	private UserRepository userRepo;
+	
+	@Autowired
+	HttpServletResponse http;
 
 	
 /******************************* User Login *******************************/
 
-	public String loginUser(String enteredString) {
+	public User loginUser(String enteredString) {
 		
 		String removeBrackets = enteredString.substring(1, enteredString.length()-1);
 		
 		String delim = "[,]";
 		String valueString = "";
 		String[] values = removeBrackets.split(delim);
+		User returnedUser = null;
 		ArrayList<String> onlyValues = new ArrayList<String>();
 		
 		for(int i = 0; i < values.length; i++) {
@@ -36,14 +43,17 @@ public class UserService {
 		for(int i = 0; i < allUsers.size(); i++) {
 			if(allUsers.get(i).getUser_name().contentEquals(onlyValues.get(0))) {
 				if(allUsers.get(i).getUser_password().contentEquals(onlyValues.get(1))) {
-					return allUsers.get(i).getFirst_name();
+					returnedUser = allUsers.get(i);
+					Cookie cookie = new Cookie("username", (String) allUsers.get(i).getUser_name());
+					http.addCookie(cookie);
+
 				}
 			}
 		}
-
 		
-		return "";
+		return returnedUser;
 	}
+
 /******************************* Create User *******************************/
 	public String makeUser(String enteredString) {
 		List<User> allUsers = new ArrayList<>();
