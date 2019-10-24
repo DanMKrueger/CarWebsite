@@ -22,19 +22,14 @@ export class LoginComponent implements OnInit {
       .subscribe((response) => {
 
         this.updateUser(response);
-        
+
         if (this.user) {
-          console.log(this.user.first_name);
-          alert(this.user + "successfully logged in!");
+          alert(this.user.first_name + " successfully logged in!");
         }
       })
-
 
   }
   updateUser(update) {
     this.user = update;
   }
-
-
-
 }
