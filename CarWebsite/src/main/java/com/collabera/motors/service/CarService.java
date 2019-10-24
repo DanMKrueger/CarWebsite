@@ -69,13 +69,14 @@ public class CarService {
 		Car newCar = new Car();
 		
 		// Take that Car, and populate it with the info that was passed to us from the front end
-		newCar.setMake(onlyValues.get(0));
-		newCar.setModel(onlyValues.get(1));
-		newCar.setCar_year(onlyValues.get(2));
-		newCar.setColor(onlyValues.get(3));
-		newCar.setDescription(onlyValues.get(4));
-		newCar.setPicture(onlyValues.get(5));
-		newCar.setPrice(onlyValues.get(6));
+		newCar.setId(0);
+		newCar.setMake(onlyValues.get(1));
+		newCar.setModel(onlyValues.get(2));
+		newCar.setCar_year(onlyValues.get(3));
+		newCar.setColor(onlyValues.get(4));
+		newCar.setDescription(onlyValues.get(5));
+		newCar.setPicture(onlyValues.get(6));
+		newCar.setPrice(onlyValues.get(7));
 		
 		// Take the new Car, and save it to the database
 		carRepo.save(newCar);

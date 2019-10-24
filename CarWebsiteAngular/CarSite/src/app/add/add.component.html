@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <button class="btn btn btn-success col-3" (click)="showForm()">Add</button>
+
+  <div *ngIf="!isCollapsed">
+
+    <form #addForm="ngForm" (ngSubmit)="submitAdd(addForm)">
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <input name = "make" type="text" class="form-control" ngModel placeholder="Make" />
+        </div>
+
+        <div class="form-group col-md-4">
+          <input name = "model" type="text" class="form-control" ngModel placeholder = "Model" />
+        </div>
+
+        <div class="form-group col-md-4">
+          <input name = "year" type="text" class="form-control" ngModel placeholder = "Year" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <input name = "color" type="text" class="form-control"ngModel placeholder = "Color"  />
+        </div>
+
+        <div class="form-group col-md-4">
+          <input
+          name = "description"
+            type="text"
+            class="form-control"
+            ngModel
+            placeholder = "Description"
+          />
+        </div>
+
+        <div class="form-group col-md-4">
+          <input name = "price" type="text" class="form-control" ngModel placeholder="Price" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <input name = "picture" type="text" class="form-control"ngModel placeholder="Picture"/>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <input
+            type="submit"
+            class="btn btn-primary"
+            value="Confirm"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

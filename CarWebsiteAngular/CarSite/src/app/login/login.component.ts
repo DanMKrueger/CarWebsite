@@ -29,6 +29,10 @@ export class LoginComponent implements OnInit {
           alert(this.user.first_name + " successfully logged in!");
           this.loggedIn = true;
         }
+
+        this.http.get('http://localhost:8080/user').subscribe((response) => {
+         console.log(response);
+        })
       })
   }
   updateUser(update) {
