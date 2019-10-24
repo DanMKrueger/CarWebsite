@@ -3,6 +3,8 @@ package com.collabera.motors.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.Cookie;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,6 +40,7 @@ public class UserService {
 			if(allUsers.get(i).getUser_name().contentEquals(onlyValues.get(0))) {
 				if(allUsers.get(i).getUser_password().contentEquals(onlyValues.get(1))) {
 					returnedUser = allUsers.get(i);
+					Cookie cookie = new Cookie("username", allUsers.get(i).getUser_name());
 				}
 			}
 		}

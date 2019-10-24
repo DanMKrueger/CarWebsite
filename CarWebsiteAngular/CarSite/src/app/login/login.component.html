@@ -1,5 +1,5 @@
 <li>
-    <form #loginForm = "ngForm" (ngSubmit)="login(loginForm)" class="py-4">
+    <form #loginForm = "ngForm" class="py-4">
         <div class="form-row">
 
             <div class="col">
@@ -11,7 +11,7 @@
             </div>
 
             <div class="col">
-                <button class='btn btn-warning mr-2' type='submit'>Login</button>
+                <input type="button" class='btn btn-warning mr-2' (click)='login(loginForm)' value="Login">
             </div>
         </div>
     </form>

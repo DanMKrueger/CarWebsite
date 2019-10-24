@@ -1,6 +1,8 @@
 package com.collabera.motors.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,6 +26,11 @@ public class UserController {
 	@RequestMapping(method=RequestMethod.POST, value="/signup")
 	public String signup(@RequestBody String enteredString) throws Exception {
 		return userService.makeUser(enteredString);
+	}
+	
+	@GetMapping("/")
+	public String readCookie(@CookieValue(value = "username", defaultValue = "non existant") String username) {
+	    return "Hey! My username is " + username;
 	}
 
 }

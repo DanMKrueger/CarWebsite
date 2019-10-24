@@ -34,7 +34,7 @@ import { AdminComponent } from './admin/admin.component'
     AppRoutingModule,
     HttpClientModule,
     FormsModule
-    ],
+  ],
   providers: [HttpClientModule, DataService],
   bootstrap: [AppComponent]
 })
