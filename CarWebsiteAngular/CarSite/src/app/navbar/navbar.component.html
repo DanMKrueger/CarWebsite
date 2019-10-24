@@ -1,7 +1,12 @@
 <!-- A grey horizontal navbar that becomes vertical on small screens -->
 <nav class="navbar navbar-expand-md bg-dark navbar-dark nav-fill d-flex justify-content-between p-0 " id="top-nav">
 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
         <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav w-100">
           <li class="nav-item py-3">
             <a class="nav-link align-middle" href="/home">Home</a>
@@ -20,7 +25,12 @@
               class = "img-fluid" id="logo" height="7%" width="7%">
               <h1 class="d-inline" id="logo-text">Prehistoric Motors</h1>
           </li>         
-          
-          <app-login></app-login>
         </ul>
-      </nav>
+          <app-login></app-login>
+
+          <div class="col">
+              <button class='btn btn-danger mr-2' type='button'>Sign Up</button>
+          </div>
+        
+      </div>
+    </nav>

@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
   username: String;
   password: String;
   user: any;
+  loggedIn : boolean = false;
+  
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -25,9 +27,9 @@ export class LoginComponent implements OnInit {
 
         if (this.user) {
           alert(this.user.first_name + " successfully logged in!");
+          this.loggedIn = true;
         }
       })
-
   }
   updateUser(update) {
     this.user = update;
