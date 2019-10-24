@@ -1,5 +1,7 @@
 package com.collabera.motors.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.collabera.motors.model.User;
+import com.collabera.motors.repository.UserRepository;
 import com.collabera.motors.service.UserService;
 
 @RestController
@@ -32,11 +35,8 @@ public class UserController {
 	}
 	
 
-	@GetMapping("/user")
-	public String readCookie(@CookieValue(value = "username", defaultValue = "non existant") String username) {
-	    System.out.println("Hey! My username is " + username);
-	    return "Hey! My username is " + username;
-	}
-	
-
 }
+
+
+
+
