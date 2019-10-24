@@ -15,7 +15,8 @@ import { DataService } from './data.service';
 import { RequestedManufacturerComponent } from './requested-manufacturer/requested-manufacturer.component';
 import { LoginComponent } from './login/login.component'
 import { AdminComponent } from './admin/admin.component';
-import { AddComponent } from './add/add.component'
+import { AddComponent } from './add/add.component';
+import { SignupComponent } from './signup/signup.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AddComponent } from './add/add.component'
     RequestedManufacturerComponent,
     LoginComponent,
     AdminComponent,
-    AddComponent
+    AddComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

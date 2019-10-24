@@ -3,12 +3,9 @@ package com.collabera.motors.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.Cookie;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.collabera.motors.controller.UserController;
 import com.collabera.motors.model.User;
 import com.collabera.motors.repository.UserRepository;
 
@@ -52,18 +49,24 @@ public User loginUser(String enteredString) {
 
 /******************************* Create User *******************************/
 	public String makeUser(String enteredString) {
+		
+		//System.out.println("HERE   " + enteredString);
 		List<User> allUsers = new ArrayList<>();
 		allUsers = userRepo.findAll();
 		enteredString = enteredString.substring(1, enteredString.length()-1);
 		String delim = "[,]";
 		String[] onlyValues = enteredString.split(delim);
-		for(int i = 1; i < allUsers.size()+1; i++) {
-			//System.out.println(userRepo.getOne(i).getUser_name());
-			if(userRepo.getOne(i).getUser_name().contentEquals(onlyValues[0])) {
+		
+		
+		for(int i = 0; i < allUsers.size(); i++) {
+			//System.out.println(userRepo.getOne(i).getUser_name() + "    " + onlyValues[0]);
+			if(allUsers.get(i).getUser_name().contentEquals(onlyValues[0])) {
+				//System.out.println("Exists");
 				return "Username already used!";
 			}
-		}		
+		}	
 		User newUser = new User();
+		newUser.setId(0);
 		newUser.setUser_name(onlyValues[0]);
 		newUser.setUser_password(onlyValues[1]);
 		newUser.setFirst_name(onlyValues[2]);

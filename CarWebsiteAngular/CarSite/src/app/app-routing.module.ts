@@ -8,6 +8,7 @@ import { CarComponent } from './car/car.component';
 import { AllCarsComponent } from './all-cars/all-cars.component';
 import { RequestedManufacturerComponent } from './requested-manufacturer/requested-manufacturer.component';
 import { AdminComponent } from './admin/admin.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,9 @@ const routes: Routes = [
   { path: 'car', component: CarComponent },
   { path: 'allcars', component: AllCarsComponent},
   { path: 'requestedmanufacturer', component: RequestedManufacturerComponent},
-  { path: 'admin', component: AdminComponent }
+  { path: 'admin', component: AdminComponent },
+  { path: 'signup', component: SignupComponent }
+
 
 
 ];
