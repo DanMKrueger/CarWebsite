@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { $ } from 'protractor';
+import { Form, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-admin',
@@ -14,6 +15,8 @@ export class AdminComponent implements OnInit {
   allCars: any;
   conf: any;
   isCollapsed = true;
+  fullString: any;
+  tempId: number;
 
   constructor(private router: Router, private http: HttpClient) {
    }
@@ -56,5 +59,18 @@ export class AdminComponent implements OnInit {
     }else{
       console.log("Backed out of delete");
     }
+  }
+
+  submitEdit(f: NgForm){
+    this.fullString = "[id=" + f.value.id  + ", make=" + f.value.make + ", model=" +f.value.model+", car_year=" +f.value.car_year+", color=" +f.value.color+", description=" +f.value.description+", picture=" +f.value.picture+", price=" +f.value.price + "]";
+    console.log(this.fullString);
+    this.http.put('http://localhost:8080/updatecar', this.fullString).subscribe((response) => {
+      console.log(response);
+    });
+
+    setTimeout(() => this.http.get('http://localhost:8080/car').subscribe((response) => {
+        console.log(response);
+        this.allCars = response;
+      }), 1000);
   }
 }

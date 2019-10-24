@@ -1,19 +1,24 @@
-<li>
-    <form #loginForm = "ngForm" (ngSubmit)="login()" class="py-4">
+
+    <div *ngIf = "loggedIn" class = "col">
+    <h2>Welcome {{username}}</h2>
+    </div>
+
+    
+    <form *ngIf = "!loggedIn" #loginForm = "ngForm" (ngSubmit)="login(loginForm)" class="py-4 form-inline">
         <div class="form-row">
 
             <div class="col">
-                <input name="username" ngModel required #user="ngModel" type="text" class="form-control" placeholder="Username">
+                <input name="username" [(ngModel)] = 'username' required placeholder="Username">
             </div>
 
             <div class="col">
-                <input name="pass" ngModel type="text" class="form-control" placeholder="Password">
+                <input name="password" [(ngModel)] = 'password' required placeholder="Password" type="password">
             </div>
 
             <div class="col">
-                <button class='btn btn-warning mr-2' type='button'>Login</button>
+                <input type="button" class='btn btn-warning mr-2' (click)='login(loginForm)' value="Login">
             </div>
-
         </div>
     </form>
-</li>
+
+    

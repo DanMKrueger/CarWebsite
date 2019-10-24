@@ -1,7 +1,7 @@
 <div class="container-fluid">
-
+<app-add></app-add>
     <div *ngFor='let car of allCars' class="">
-        <div class="row my-1 mx-1"> 
+        <div class="row my-1 mx-1">
             <p class="makeClass col-3">{{ car?.make }}</p>
             <p class="modelClass col-3">{{ car?.model }}</p>
             <button class="btn btn-primary col-3" (click)='editClicked(car.id)'>Edit</button>
@@ -9,43 +9,45 @@
         </div>
 
         <div class="row" id={{car.id}} style="display: none;">
-            <form>
+            <form #f="ngForm">
+                <input style="display:none;" type="text" name="id" class="form-control" ngModel={{car?.id}}>
                 <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <input type="text" class="form-control" value={{car?.make}}>
-                  </div>
-                  <div class="form-group col-md-4">
-                      <input type="text" class="form-control" value={{car?.model}}>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <input type="text" class="form-control" value={{car?.car_year}}>
-                  </div>
+                    <div class="form-group col-md-4">
+                        <input type="text" name="make" ngModel={{car?.make}} class="form-control">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input type="text" name="model" class="form-control" ngModel={{car?.model}}>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input type="text" name="car_year" class="form-control" ngModel={{car?.car_year}}>
+                    </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                      <input type="text" class="form-control" value={{car?.color}}>
+                        <input type="text" name="color" class="form-control" ngModel={{car?.color}}>
                     </div>
                     <div class="form-group col-md-4">
-                        <input type="text" class="form-control" value={{car?.description}}>
+                        <input type="text" name="description" class="form-control" ngModel={{car?.description}}>
                     </div>
                     <div class="form-group col-md-4">
-                      <input type="text" class="form-control" value={{car?.price}}>
+                        <input type="text" name="price" class="form-control" ngModel={{car?.price}}>
                     </div>
-                  </div>
-                  <div class="form-row">
-                        <div class="form-group col-md-12">
-                                <input type="text" class="form-control" value={{car?.picture}}>
-                        </div>
-                  </div>
-                  <div class="form-row">
-                        <div class="form-group col-md-2">
-                                <button type="submit" class="btn btn-success">Confirm</button>
-                        </div>
-                  </div>
-                        
-              </form>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <input type="text" name="picture" class="form-control" ngModel={{car?.picture}}>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <input type="button" class="btn btn-primary" (click)='submitEdit(f);' value="Confirm">
+                    </div>
+                </div>
+
+            </form>
         </div>
 
     </div>
 
 </div>
+

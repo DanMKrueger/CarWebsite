@@ -13,7 +13,9 @@ import { AllCarsComponent } from './all-cars/all-cars.component';
 import { DataService } from './data.service';
 import { RequestedManufacturerComponent } from './requested-manufacturer/requested-manufacturer.component';
 import { LoginComponent } from './login/login.component'
-import { AdminComponent } from './admin/admin.component'
+import { AdminComponent } from './admin/admin.component';
+import { AddComponent } from './add/add.component';
+import { SignupComponent } from './signup/signup.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AdminComponent } from './admin/admin.component'
     AllCarsComponent,
     RequestedManufacturerComponent,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    AddComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,7 @@ import { AdminComponent } from './admin/admin.component'
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule
-    ],
+  ],
   providers: [HttpClientModule, DataService],
   bootstrap: [AppComponent]
 })

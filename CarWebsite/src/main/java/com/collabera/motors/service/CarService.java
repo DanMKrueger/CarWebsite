@@ -36,7 +36,6 @@ public class CarService {
 		// Create a new car, and set it to be the car that the person was referencing by
 		// getting the car from the database that has the same ID.
 		Car enteredCar = carRepo.getOne(Integer.parseInt(onlyValues.get(0)));
-		//System.out.println(enteredCar);
 		
 		// Set all the attributes of the car to the values they should be based on what
 		// we got from the front end.
@@ -47,10 +46,8 @@ public class CarService {
 		enteredCar.setColor(onlyValues.get(4));
 		enteredCar.setDescription(onlyValues.get(5));
 		enteredCar.setPicture(onlyValues.get(6));
-		System.out.println(onlyValues.get(7));
 		enteredCar.setPrice(onlyValues.get(7));
 		
-		System.out.println(enteredCar);
 
 		// Save the car to the database to finalize the update.
 		carRepo.save(enteredCar);
@@ -72,13 +69,14 @@ public class CarService {
 		Car newCar = new Car();
 		
 		// Take that Car, and populate it with the info that was passed to us from the front end
-		newCar.setMake(onlyValues.get(0));
-		newCar.setModel(onlyValues.get(1));
-		newCar.setCar_year(onlyValues.get(2));
-		newCar.setColor(onlyValues.get(3));
-		newCar.setDescription(onlyValues.get(4));
-		newCar.setPicture(onlyValues.get(5));
-		newCar.setPrice(onlyValues.get(6));
+		newCar.setId(0);
+		newCar.setMake(onlyValues.get(1));
+		newCar.setModel(onlyValues.get(2));
+		newCar.setCar_year(onlyValues.get(3));
+		newCar.setColor(onlyValues.get(4));
+		newCar.setDescription(onlyValues.get(5));
+		newCar.setPicture(onlyValues.get(6));
+		newCar.setPrice(onlyValues.get(7));
 		
 		// Take the new Car, and save it to the database
 		carRepo.save(newCar);
@@ -104,15 +102,13 @@ public class CarService {
 	
 	public Car getCar(int id) throws JsonMappingException {
 		try {
+			// Try to get the car with the ID passed in, and then return it.
 			carRepo.getOne(id);
 			Car requestedCar = carRepo.getOne(id);
-			System.out.println(requestedCar.toString());
 			return requestedCar;
-			//return requestedCar.toString();
-
+			// If the car is not there, return null.
 		}catch(EntityNotFoundException e) {
 			return null;
-			//return "Id Not Found!";
 		}
 		catch(HttpMessageNotWritableException e) {
 			return null;
@@ -123,18 +119,27 @@ public class CarService {
 /************************************* Extract method to get values out of entered array *************************************/
 	
 	public ArrayList<String> extracted(String enteredString) {
+		// Create a new string, and set it equal to the passed in string but take off the first and
+		// last chars becaues they are [ and ] respectively and we dont need that.
 		String mySubstr;
 		mySubstr = enteredString.substring(1, enteredString.length()-1);
-		//System.out.println(mySubstr);
 		
-		// Potentially parse through the entered string if necessary
+		// Parse through the entered string on the , followed by a space.
 		String delim = ",\\s";
+		
+		// Create a string array that is equal to the array of values, and split it
+		// on the , to get each value by itself. Then create a new array list.
 		String[] parsedData = mySubstr.split(delim);
-		//System.out.println(enteredString.toString());
 		ArrayList<String> onlyValues = new ArrayList<>();
+		
+		// Loop through the String array of the values in the format -> make=Dodge, model=Ram 
+		// split on the equal sign, and take everything after the equal sign all the way to the end
+		// of that specific entry so make=Dodge just becomes Dodge. Then push that value into our array list.
 		for(int i = 0; i < parsedData.length; i++) {
 			onlyValues.add(parsedData[i].substring(parsedData[i].indexOf("=")+1, parsedData[i].length()));
 		}
+		
+		//return our value array list.
 		return onlyValues;
 	}
 
