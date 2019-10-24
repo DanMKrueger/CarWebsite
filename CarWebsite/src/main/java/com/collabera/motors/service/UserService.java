@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,9 @@ public class UserService {
 	
 	@Autowired
 	private UserRepository userRepo;
+	
+	@Autowired
+	HttpServletResponse http;
 
 	
 /******************************* User Login *******************************/
@@ -40,13 +44,16 @@ public class UserService {
 			if(allUsers.get(i).getUser_name().contentEquals(onlyValues.get(0))) {
 				if(allUsers.get(i).getUser_password().contentEquals(onlyValues.get(1))) {
 					returnedUser = allUsers.get(i);
-					Cookie cookie = new Cookie("username", allUsers.get(i).getUser_name());
+					Cookie cookie = new Cookie("username", (String) allUsers.get(i).getUser_name());
+					http.addCookie(cookie);
+
 				}
 			}
 		}
 		
 		return returnedUser;
 	}
+
 /******************************* Create User *******************************/
 	public String makeUser(String enteredString) {
 		List<User> allUsers = new ArrayList<>();

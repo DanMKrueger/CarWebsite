@@ -1,5 +1,8 @@
 package com.collabera.motors.controller;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,9 +31,12 @@ public class UserController {
 		return userService.makeUser(enteredString);
 	}
 	
-	@GetMapping("/")
+
+	@GetMapping("/user")
 	public String readCookie(@CookieValue(value = "username", defaultValue = "non existant") String username) {
+	    System.out.println("Hey! My username is " + username);
 	    return "Hey! My username is " + username;
 	}
+	
 
 }

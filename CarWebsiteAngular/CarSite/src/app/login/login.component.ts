@@ -26,6 +26,10 @@ export class LoginComponent implements OnInit {
         if (this.user) {
           alert(this.user.first_name + " successfully logged in!");
         }
+
+        this.http.get('http://localhost:8080/user').subscribe((response) => {
+         console.log(response);
+        })
       })
 
   }
