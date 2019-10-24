@@ -7,7 +7,7 @@ export class DataService{
     private messageSource = new BehaviorSubject<number>(-1);
     currentMessage = this.messageSource.asObservable();
 
-    private manufacturerSource = new BehaviorSubject<String>("Default");
+    private manufacturerSource = new BehaviorSubject<string>('Default');
     currentManufacturer = this.manufacturerSource.asObservable();
 
 
