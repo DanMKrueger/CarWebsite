@@ -17,7 +17,7 @@ export class SignupComponent implements OnInit {
   }
 
   addUser(f: NgForm){
-    if(f.value.password === null || f.value.username === null || f.value.firstname === null || f.value.lastname === null){
+    if(f.value.Password.length == 0 || f.value.Username.length == 0 || f.value.FirstName == 0 || f.value.LastName == 0){
       alert("Please enter all fields!");
     }else{
       this.fullString = "[" + f.value.Username + ","+f.value.Password + "," + f.value.FirstName + "," + f.value.LastName + "]"; 
