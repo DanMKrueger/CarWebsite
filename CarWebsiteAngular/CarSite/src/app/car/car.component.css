@@ -36,3 +36,7 @@
 /* .blankRow{
   margin: 10px;
 } */
+
+.redBorder{
+  border: 5px solid red;
+}

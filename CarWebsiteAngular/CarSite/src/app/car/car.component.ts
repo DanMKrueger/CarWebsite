@@ -80,9 +80,21 @@ export class CarComponent implements OnInit  {
   onSubmit(buyNowForm) {
     console.log(buyNowForm);
 
-    if (buyNowForm.status === 'VALID') {
-      alert('Thank you for buying the car of your dreams. We will email you a receipt');
-
+    if (buyNowForm.controls.firstName.status === 'INVALID') {
+      // var x = document.getElementById("alertDiv");
+      // var y = document.createElement("div");
+      // y.className = "alert alert-danger";
+      // y.innerHTML = "Incorrect First Name!";
+      // x.appendChild(y);
+      var x= document.getElementById("firstName");
+      x.classList.add("redBorder");
+    }
+    else if (buyNowForm.controls.lastName.status === 'INVALID') {
+      alert('Please enter a valid last name you idiot!');
+    }
+    else{
+      alert("Thank you for your purchase!")
+      this.router.navigateByUrl("/home");
     }
 
   }
