@@ -25,21 +25,27 @@ car: any;
         this.isCollapsed = !this.isCollapsed;
   }
 
-  submitAdd(form : NgForm) {
-this.car =
-[
-form.value.make,
-form.value.model,
-form.value.year,
-form.value.color,
-form.value.description,
-form.value.picture,
-form.value.price
-]
+  submitAdd(f : NgForm) {
+    this.car =
+    "[id=0" +
+    ", make=" +
+    f.value.make +
+    ", model=" +
+    f.value.model+
+    ", car_year=" +
+    f.value.year+
+    ", color=" +
+    f.value.color+
+    ", description=" +
+    f.value.description+
+    ", picture=" +
+    f.value.picture+
+    ", price=" +
+    f.value.price + "]";
 
 this.http.post('http://localhost:8080/addcar', this.car).subscribe((response) => {
       console.log(response);
     });
-    console.log(form);
+
   }
 }
