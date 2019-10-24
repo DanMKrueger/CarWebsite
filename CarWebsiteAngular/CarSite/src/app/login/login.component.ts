@@ -9,24 +9,27 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
 
-  username : String;
-  password : String;
-  user : any;
-  constructor(private http : HttpClient) { }
+  username: String;
+  password: String;
+  user: any;
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }
 
-  login(f: NgForm)
-  {
-    this.http.post('http://localhost:8080/login', [this.username , this.password])
-    .subscribe((response) => {
-      this.user = response;
-    })
-      console.log(f.value.username);  // { first: '', last: '' }
-      console.log(f.value.password);  // false
-      if(this.user)
-      {console.log(this.user.first_name)}
-    
+  login(f: NgForm) {
+    this.http.post('http://localhost:8080/login', [this.username, this.password])
+      .subscribe((response) => {
+
+        this.updateUser(response);
+
+        if (this.user) {
+          alert(this.user.first_name + " successfully logged in!");
+        }
+      })
+
+  }
+  updateUser(update) {
+    this.user = update;
   }
 }
