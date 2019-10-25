@@ -14,6 +14,7 @@ import { DataService } from './data.service';
 import { RequestedManufacturerComponent } from './requested-manufacturer/requested-manufacturer.component';
 import { LoginComponent } from './login/login.component'
 import { AdminComponent } from './admin/admin.component';
+import { LoginService } from './login/login.service';
 import { AddComponent } from './add/add.component';
 import { SignupComponent } from './signup/signup.component'
 
@@ -39,7 +40,7 @@ import { SignupComponent } from './signup/signup.component'
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [HttpClientModule, DataService],
+  providers: [HttpClientModule, DataService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

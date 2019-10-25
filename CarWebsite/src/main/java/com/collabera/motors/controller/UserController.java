@@ -33,8 +33,6 @@ public class UserController {
 	public String signup(@RequestBody String enteredString) throws Exception {
 		return userService.makeUser(enteredString);
 	}
-	
-
 }
 
 
