@@ -90,7 +90,7 @@ export class CarComponent implements OnInit  {
       x.classList.add("redBorder");
     }
     else if (buyNowForm.controls.lastName.status === 'INVALID') {
-      alert('Please enter a valid last name you idiot!');
+      alert('Please enter a valid last name!');
     }
     else{
       alert("Thank you for your purchase!")
