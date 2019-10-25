@@ -25,7 +25,7 @@
 
       </div>
       <div class="form-group col-md-6">
-          <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+          <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Last Name">
             <div *ngIf="buyNowForm.value.lastName.invalid && (buyNowForm.value.lastName.dirty || buyNowForm.value.lastName.touched)" class="alert alert-danger">
               <div *ngIf="buyNowForm.value.lastName.errors.required">Please Enter a Last Name</div>
             </div>
@@ -33,7 +33,7 @@
       </div>
     </div>
       <div class="form-group">
-          <input type="email" formControlName="email" class="form-control" placeholder="Email">
+          <input type="email" formControlName="email" id="email" class="form-control" placeholder="Email">
             <div *ngIf="buyNowForm.value.email.invalid && (buyNowForm.value.email.dirty || buyNowForm.value.email.touched)" class="alert alert-danger">
                 <div *ngIf="buyNowForm.value.email.errors.required">Please Enter a Email</div>
                 <div *ngIf="buyNowForm.value.email.errors.pattern">Please enter a valid Email</div>
@@ -41,7 +41,7 @@
       </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-            <input type="text" class="form-control" formControlName="creditCard" placeholder="Credit Card">
+            <input type="text" class="form-control" id="creditCard" formControlName="creditCard" placeholder="Credit Card">
               <div *ngIf="buyNowForm.value.creditCard.invalid && (buyNowForm.value.creditCard.dirty || buyNowForm.value.creditCard.touched)" class="alert alert-danger">
                 <div *ngIf="buyNowForm.value.creditCard.errors.required">Please enter a Credit Card number</div>
                 <div *ngIf="buyNowForm.value.creditCard.errors.minLength">Please enter a valid Credit card number</div>
@@ -49,7 +49,7 @@
               </div>
         </div>
         <div class="form-group col-md-2">
-            <input type="text" class="form-control" formControlName="cvv" placeholder="CVV">
+            <input type="text" class="form-control" id="cvv" formControlName="cvv" placeholder="CVV">
               <div *ngIf="buyNowForm.value.cvv.invalid && (buyNowForm.value.cvv.dirty || buyNowForm.value.cvv.touched)" class="alert alert-danger">
                 <div *ngIf="buyNowForm.value.cvv.errors.required">Please enter the CVV</div>
                 <div *ngIf="buyNowForm.value.cvv.errors.maxLength">Please Enter a valid CVV</div>
@@ -57,7 +57,7 @@
               </div>
         </div>
         <div class="form-group col-md-4">
-            <input type="text" class="form-control" formControlName="creditCardDate" placeholder="Expiration Date mm/yy">
+            <input type="text" class="form-control" id="creditCardDate" formControlName="creditCardDate" placeholder="Expiration Date mm/yy">
               <div *ngIf="buyNowForm.value.cvv.invalid && (buyNowForm.value.cvv.dirty || buyNowForm.value.cvv.touched)" class="alert alert-danger">
                 <div *ngIf="buyNowForm.value.cvv.errors.required">Please enter Expiration Date for Credit Card</div>
                 <div *ngIf="buyNowForm.value.email.errors.pattern">Please Enter a valid date</div>
@@ -66,25 +66,25 @@
     </div>
     <div class="form-row">
       <div class="form-group col-md-4">
-          <input type="streetview" class="form-control" formControlName="address" placeholder="Street Address">
+          <input type="streetview" class="form-control" id="address" formControlName="address" placeholder="Street Address">
             <div *ngIf="buyNowForm.value.address.invalid && (buyNowForm.value.address.dirty || buyNowForm.value.address.touched)" class="alert alert-danger">
               <div *ngIf="buyNowForm.value.address.errors.required">Please enter Street Address</div>
             </div>
       </div>
       <div class="form-group col-md-4">
-          <input type="location_city" class="form-control" formControlName="city" placeholder="City">
+          <input type="location_city" class="form-control" id="city" formControlName="city" placeholder="City">
             <div *ngIf="buyNowForm.value.city.invalid && (buyNowForm.value.city.dirty || buyNowForm.value.city.touched)" class="alert alert-danger">
               <div *ngIf="buyNowForm.value.city.errors.required">PLease enter a City</div>
             </div>
       </div>
       <div class="form-group col-md-2">
-          <input type="text" class="form-control" formControlName="state" placeholder="State">
+          <input type="text" class="form-control" id="state" formControlName="state" placeholder="State">
             <div *ngIf="buyNowForm.value.state.invalid && (buyNowForm.value.state.dirty || buyNowForm.value.state.touched)" class="alert alert-danger">
               <div *ngIf="buyNowForm.value.state.errors.required">Please Enter a State</div>
             </div>
       </div>
       <div class="form-group col-md-2">
-          <input type="zip" class="form-control" formControlName="zip" placeholder="Zip">
+          <input type="zip" class="form-control" id="zip" formControlName="zip" placeholder="Zip">
             <div *ngIf="buyNowForm.value.zip.invalid && (buyNowForm.value.zip.dirty || buyNowForm.value.zip.touched)" class="alert alert-danger">
               <div *ngIf="buyNowForm.value.state.errors.required">Please Enter a Zip Code</div>
               <div *ngIf="buyNowForm.value.state.errors.maxLength">Please enter a valid Zip Code</div>
