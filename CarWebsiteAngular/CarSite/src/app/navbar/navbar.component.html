@@ -26,7 +26,7 @@
               <h1 class="d-inline" id="logo-text">Prehistoric Motors</h1>
           </li>         
         </ul>
-          <app-login></app-login>
+          <app-login *ngIf = "!loginService.isUserLoggedIn()" ></app-login>
 
           <div class="col">
               <button class='btn btn-danger mr-2' type='button'>Sign Up</button>

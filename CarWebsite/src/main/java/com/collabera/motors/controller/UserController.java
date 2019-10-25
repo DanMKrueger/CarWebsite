@@ -30,13 +30,4 @@ public class UserController {
 	public String signup(@RequestBody String enteredString) throws Exception {
 		return userService.makeUser(enteredString);
 	}
-	
-
-	@GetMapping("/user")
-	public String readCookie(@CookieValue(value = "username", defaultValue = "non existant") String username) {
-	    System.out.println("Hey! My username is " + username);
-	    return "Hey! My username is " + username;
-	}
-	
-
 }

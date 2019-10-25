@@ -4,15 +4,15 @@
     </div>
 
     
-    <form *ngIf = "!loggedIn" #loginForm = "ngForm" (ngSubmit)="login(loginForm)" class="py-4 form-inline">
+    <form #loginForm = "ngForm" (ngSubmit)="login(loginForm)" class="py-4 form-inline">
         <div class="form-row">
 
             <div class="col">
-                <input name="username" [(ngModel)] = 'username' required placeholder="Username">
+                <input name="username" ngModel required placeholder="Username">
             </div>
 
             <div class="col">
-                <input name="password" [(ngModel)] = 'password' required placeholder="Password" type="password">
+                <input name="password" ngModel required placeholder="Password" type="password">
             </div>
 
             <div class="col">
