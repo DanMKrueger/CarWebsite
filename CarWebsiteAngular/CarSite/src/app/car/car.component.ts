@@ -85,15 +85,49 @@ export class CarComponent implements OnInit  {
       // y.className = "alert alert-danger";
       // y.innerHTML = "Incorrect First Name!";
       // x.appendChild(y);
-      var x= document.getElementById("firstName");
-      x.classList.add("redBorder");
+      alert('Please enter a valid first name!');
+      var x= document.getElementById('firstName');
+      x.classList.add('redBorder');
     }
     else if (buyNowForm.controls.lastName.status === 'INVALID') {
       alert('Please enter a valid last name!');
-    }
-    else{
-      alert("Thank you for your purchase!")
-      this.router.navigateByUrl("/home");
+      var x= document.getElementById('lastName');
+      x.classList.add('redBorder');
+    } else if (buyNowForm.controls.email.status === 'INVALID') {
+      alert('Please enter a valid email!');
+      var x= document.getElementById('email');
+      x.classList.add('redBorder');
+    } else if (buyNowForm.controls.creditCard.status === 'INVALID') {
+      alert('Please enter a valid Credit Card!');
+      var x= document.getElementById('creditCard');
+      x.classList.add('redBorder');
+    } else if (buyNowForm.controls.cvv.status === 'INVALID') {
+      alert('Please enter a valid CVV!');
+      var x= document.getElementById('cvv');
+      x.classList.add('redBorder');
+    } else if (buyNowForm.controls.creditCardDate.status === 'INVALID') {
+      alert('Please enter a valid Expiration Date!');
+      var x= document.getElementById('creditCardDate');
+      x.classList.add('redBorder');
+    } else if (buyNowForm.controls.address.status === 'INVALID') {
+      alert('Please enter a Address!');
+      var x= document.getElementById('address');
+      x.classList.add('redBorder');
+    } else if (buyNowForm.controls.city.status === 'INVALID') {
+      alert('Please enter a City!');
+      var x= document.getElementById('city');
+      x.classList.add('redBorder');
+    } else if (buyNowForm.controls.state.status === 'INVALID') {
+      alert('Please enter a State!');
+      var x= document.getElementById('state');
+      x.classList.add('redBorder');
+    } else if (buyNowForm.controls.zip.status === 'INVALID') {
+      alert('Please enter a valid zip!');
+      var x= document.getElementById('zip');
+      x.classList.add('redBorder');
+    } else {
+      alert('Thank you for your purchase!');
+      this.router.navigateByUrl('/home');
     }
 
   }
