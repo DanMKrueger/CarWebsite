@@ -9,6 +9,8 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent implements OnInit {
 
+  username : String;
+  
   constructor(private loginService : LoginService) { }
 
   ngOnInit() {
@@ -16,5 +18,8 @@ export class LoginComponent implements OnInit {
 
   login(f: NgForm) {
     this.loginService.authenticate(f.value.username, f.value.password);
+    this.username = f.value.username;
   }
+
+  logout(){this.loginService.logOut()}
 }

@@ -16,7 +16,7 @@ import { LoginComponent } from './login/login.component'
 import { AdminComponent } from './admin/admin.component';
 import { LoginService } from './login/login.service';
 import { AddComponent } from './add/add.component';
-import { SignupComponent } from './signup/signup.component'
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [

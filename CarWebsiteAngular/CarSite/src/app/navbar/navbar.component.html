@@ -8,29 +8,27 @@
         <!-- Links -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav w-100">
-          <li class="nav-item py-3">
-            <a class="nav-link align-middle" href="/home">Home</a>
+          <li class="nav-item py-3" [ngClass] = "{'active' : active === 'home'}">
+            <a class="nav-link h-100 w-100 p-0" (click) = "setActive('home')" [routerLink] = "['home']">Home</a>
           </li>
 
-          <li class="nav-item py-3">
-              <a class="nav-link" href="/allcars">Cars</a>
+          <li class="nav-item py-3" [ngClass] = "{'active' : active === 'allcars'}">
+              <a class="nav-link h-100 w-100 p-0" (click) = "setActive('allcars')" [routerLink] = "['allcars']">Cars</a>
             </li>
 
-          <li class="nav-item py-3">
-            <a class="nav-link" href="/contact">Contact</a>
+          <li class="nav-item py-3" [ngClass] = "{'active' : active === 'contact'}">
+            <a class="nav-link h-100 w-100 p-0" (click) = "setActive('contact')" [routerLink] = "['contact']">Contact</a>
           </li>
 
-          <li class="nav-item navbar-brand">
+          <li class="nav-item navbar-brand d-inline">
               <img src = "https://www.stickers-factory.com/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/2/6/26575_00.png" 
-              class = "img-fluid" id="logo" height="7%" width="7%">
-              <h1 class="d-inline" id="logo-text">Prehistoric Motors</h1>
-          </li>         
+               class = "img-fluid" id="logo" height="7%" width="7%">
+              <h2 class="d-inline" id="logo-text">Prehistoric Motors</h2>
+          </li>    
         </ul>
-          <app-login *ngIf = "!loginService.isUserLoggedIn()" ></app-login>
 
-          <div class="col">
-              <button class='btn btn-danger mr-2' type='button' (click)="signupClicked()">Sign Up</button>
-          </div>
-        
+          <app-login></app-login>
+
+          <button *ngIf = "!loginService.isUserLoggedIn()" class="btn btn-outline-danger" type="button" [routerLink] = "['signup']">Sign Up</button>
       </div>
     </nav>

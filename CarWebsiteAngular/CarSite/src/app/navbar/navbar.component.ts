@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  
+
+  active : String = "home";
+
   constructor(private router: Router, private loginService :LoginService) { }
 
   ngOnInit() {
@@ -19,4 +21,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigateByUrl('/signup');
   }
 
+  contactClick(){this.router.navigateByUrl('/contact');}
+
+  setActive(tab : String){this.active = tab;}
 }

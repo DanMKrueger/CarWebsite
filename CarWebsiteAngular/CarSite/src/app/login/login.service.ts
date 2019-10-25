@@ -7,26 +7,31 @@ export class LoginService {
 
   constructor(private http : HttpClient) { }
 
-  authenticate(username : any, password : any) {
-    
+  authenticate(username : any, password : any)
+  {
       this.http.post('http://localhost:8080/login', [username, password])
       .subscribe((response) => {
         
         if (response) 
         {
-          sessionStorage.setItem('username', response.toString())
+          sessionStorage.setItem('username', username)
           alert(username + " successfully logged in!");
           return true;
         }
-        else{return false;}
+        else
+        {
+          alert("Invalid credentials!");
+        return false;
+        }
       })
   }
 
   isUserLoggedIn() {
     let user = sessionStorage.getItem('username');
-    console.log(!(user === null));
     return !(user === null);
   }
+
+  currentUser(){return sessionStorage.getItem('username');}
 
   logOut() {
     sessionStorage.removeItem('username')

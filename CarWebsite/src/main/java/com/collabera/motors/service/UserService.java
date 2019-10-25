@@ -18,7 +18,7 @@ public class UserService {
 	
 /******************************* User Login *******************************/
 
-public User loginUser(String enteredString) {
+public boolean loginUser(String enteredString) {
 		
 		String removeBrackets = enteredString.substring(1, enteredString.length()-1);
 		
@@ -39,12 +39,12 @@ public User loginUser(String enteredString) {
 				if(allUsers.get(i).getUser_password().contentEquals(onlyValues.get(1))) {
 					returnedUser = allUsers.get(i);
 					System.out.println(allUsers.get(i).getUser_name());
-
+					return true;
 				}
 			}
 		}
+		return false;
 		
-		return returnedUser;
 	}
 
 /******************************* Create User *******************************/

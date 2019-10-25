@@ -24,7 +24,7 @@ public class UserController {
 	private UserService userService;
 	
 	@RequestMapping(method=RequestMethod.POST, value="/login")
-	public User loginClicked(@RequestBody String enteredString) throws Exception {
+	public boolean loginClicked(@RequestBody String enteredString) throws Exception {
 		System.out.println(enteredString);
 		return userService.loginUser(enteredString);
 	}

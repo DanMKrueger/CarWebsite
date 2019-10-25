@@ -1,24 +1,14 @@
 
-    <div *ngIf = "loggedIn" class = "col">
-    <h2>Welcome {{username}}</h2>
+    <div *ngIf = "loginService.isUserLoggedIn()" class = "row pr-4">
+    <h3 class = "col">Welcome {{loginService.currentUser()}}</h3>
+    <button type="button" class='btn btn-outline-warning my-auto col' (click)='logout()' value="Logout">Logout</button>
     </div>
 
     
-    <form #loginForm = "ngForm" (ngSubmit)="login(loginForm)" class="py-4 form-inline">
-        <div class="form-row">
-
-            <div class="col">
-                <input name="username" ngModel required placeholder="Username">
-            </div>
-
-            <div class="col">
-                <input name="password" ngModel required placeholder="Password" type="password">
-            </div>
-
-            <div class="col">
-                <input type="button" class='btn btn-warning mr-2' (click)='login(loginForm)' value="Login">
-            </div>
-        </div>
+    <form class = "form-row" *ngIf = "!loginService.isUserLoggedIn()" #loginForm = "ngForm" (ngSubmit)="login(loginForm)">
+        <input class = "col mr-2 form-control" name="username" ngModel required placeholder="Username">
+        <input class = "col mr-2 form-control" name="password" ngModel required placeholder="Password" type="password">
+        <button type="button" class="col btn btn-outline-warning mr-2" (click)='login(loginForm)'>Login</button>
     </form>
 
     

@@ -5,7 +5,7 @@
             id = '{{manufacturer?.make}}' class="img-fluid"
             (mouseover) = "hovering = ($event.target.id)" (mouseout)="hovering = ''"
             (click) = manufacturerClicked(manufacturer.make)
-            [ngClass] = "{'animated pulse infinite' : hovering === manufacturer.make }"
+            [ngClass] = "{'animated pulse infinite bg-light rounded' : hovering === manufacturer.make }"
             src='{{manufacturer?.image}}'>
             <img>
         </div>
