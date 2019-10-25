@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -15,8 +14,9 @@ import { DataService } from './data.service';
 import { RequestedManufacturerComponent } from './requested-manufacturer/requested-manufacturer.component';
 import { LoginComponent } from './login/login.component'
 import { AdminComponent } from './admin/admin.component';
-import { AddComponent } from './add/add.component'
 import { LoginService } from './login/login.service';
+import { AddComponent } from './add/add.component';
+import { SignupComponent } from './signup/signup.component'
 
 @NgModule({
   declarations: [
@@ -30,12 +30,14 @@ import { LoginService } from './login/login.service';
     RequestedManufacturerComponent,
     LoginComponent,
     AdminComponent,
-    AddComponent
+    AddComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule
   ],
   providers: [HttpClientModule, DataService, LoginService],

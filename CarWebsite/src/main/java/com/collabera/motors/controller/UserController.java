@@ -1,5 +1,7 @@
 package com.collabera.motors.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.collabera.motors.model.User;
+import com.collabera.motors.repository.UserRepository;
 import com.collabera.motors.service.UserService;
 
 @RestController
@@ -31,3 +34,7 @@ public class UserController {
 		return userService.makeUser(enteredString);
 	}
 }
+
+
+
+

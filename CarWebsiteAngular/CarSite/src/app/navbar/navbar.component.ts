@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login/login.service';
+import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +9,14 @@ import { LoginService } from '../login/login.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor(private loginService :LoginService) { }
+  
+  constructor(private router: Router, private loginService :LoginService) { }
 
   ngOnInit() {
+  }
+
+  signupClicked(){
+    this.router.navigateByUrl('/signup');
   }
 
 }
