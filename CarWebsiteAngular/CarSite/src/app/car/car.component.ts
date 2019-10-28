@@ -78,61 +78,97 @@ export class CarComponent implements OnInit  {
 
   onSubmit(buyNowForm) {
     console.log(buyNowForm);
-
     if (buyNowForm.controls.firstName.status === 'INVALID') {
-      // var x = document.getElementById("alertDiv");
-      // var y = document.createElement("div");
-      // y.className = "alert alert-danger";
-      // y.innerHTML = "Incorrect First Name!";
-      // x.appendChild(y);
-      alert('Please enter a valid first name!');
       var x= document.getElementById('firstName');
       x.classList.add('redBorder');
+    }else{
+      var x= document.getElementById('firstName');
+      x.classList.remove('redBorder');
     }
-    else if (buyNowForm.controls.lastName.status === 'INVALID') {
-      alert('Please enter a valid last name!');
+
+    if (buyNowForm.controls.lastName.status === 'INVALID') {
       var x= document.getElementById('lastName');
       x.classList.add('redBorder');
-    } else if (buyNowForm.controls.email.status === 'INVALID') {
-      alert('Please enter a valid email!');
+    } else{
+      var x= document.getElementById('lastName');
+      x.classList.remove('redBorder');
+    }
+    
+    if (buyNowForm.controls.email.status === 'INVALID') {
       var x= document.getElementById('email');
       x.classList.add('redBorder');
-    } else if (buyNowForm.controls.creditCard.status === 'INVALID') {
-      alert('Please enter a valid Credit Card!');
+    } else{
+      var x= document.getElementById('email');
+      x.classList.remove('redBorder');
+    }
+    
+    if (buyNowForm.controls.creditCard.status === 'INVALID') {
       var x= document.getElementById('creditCard');
       x.classList.add('redBorder');
-    } else if (buyNowForm.controls.cvv.status === 'INVALID') {
-      alert('Please enter a valid CVV!');
+    }else{
+      var x= document.getElementById('creditCard');
+      x.classList.remove('redBorder');
+    }
+    
+    if (buyNowForm.controls.cvv.status === 'INVALID') {
       var x= document.getElementById('cvv');
       x.classList.add('redBorder');
-    } else if (buyNowForm.controls.creditCardDate.status === 'INVALID') {
-      alert('Please enter a valid Expiration Date!');
+    } else{
+      var x= document.getElementById('cvv');
+      x.classList.remove('redBorder');
+    }
+    
+    if (buyNowForm.controls.creditCardDate.status === 'INVALID') {
       var x= document.getElementById('creditCardDate');
       x.classList.add('redBorder');
-    } else if (buyNowForm.controls.address.status === 'INVALID') {
-      alert('Please enter a Address!');
+    } else{
+      var x= document.getElementById('creditCardDate');
+      x.classList.remove('redBorder');
+    }
+    
+    if (buyNowForm.controls.address.status === 'INVALID') {
       var x= document.getElementById('address');
       x.classList.add('redBorder');
-    } else if (buyNowForm.controls.city.status === 'INVALID') {
-      alert('Please enter a City!');
+    } else{
+      var x= document.getElementById('address');
+      x.classList.remove('redBorder');
+    }
+    
+    if (buyNowForm.controls.city.status === 'INVALID') {
       var x= document.getElementById('city');
       x.classList.add('redBorder');
-    } else if (buyNowForm.controls.state.status === 'INVALID') {
-      alert('Please enter a State!');
+    } else{
+      var x= document.getElementById('city');
+      x.classList.remove('redBorder');
+    }
+    
+    if (buyNowForm.controls.state.status === 'INVALID') {
       var x= document.getElementById('state');
       x.classList.add('redBorder');
-    } else if (buyNowForm.controls.zip.status === 'INVALID') {
-      alert('Please enter a valid zip!');
+    } else{
+      var x= document.getElementById('state');
+      x.classList.remove('redBorder');
+    }
+    
+    if (buyNowForm.controls.zip.status === 'INVALID') {
       var x= document.getElementById('zip');
       x.classList.add('redBorder');
-    } else {
+    } else{
+      var x= document.getElementById('zip');
+      x.classList.remove('redBorder');
+    }
+
+
+    if(this.buyNowForm.status === "VALID"){
       alert('Thank you for your purchase!');
       this.router.navigateByUrl('/home');
+    }else{
+      var x = document.getElementById('alertDiv');
+      x.classList.add("alert");
+      x.classList.add("alert-danger");
+      x.innerHTML = "Please correct highlighted field(s)!";
     }
 
   }
-
-
-
 
 }
