@@ -120,7 +120,7 @@ public class CarService {
 	
 	public ArrayList<String> extracted(String enteredString) {
 		// Create a new string, and set it equal to the passed in string but take off the first and
-		// last chars becaues they are [ and ] respectively and we dont need that.
+		// last chars becaues they are [ and ] respectively and we don't need that.
 		String mySubstr;
 		mySubstr = enteredString.substring(1, enteredString.length()-1);
 		

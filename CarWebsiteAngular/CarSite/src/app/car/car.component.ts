@@ -39,7 +39,7 @@ export class CarComponent implements OnInit  {
       cvv: new FormControl('',
           Validators.compose([Validators.required, Validators.maxLength(4), Validators.minLength(3)])),
       creditCardDate: new FormControl('',
-          Validators.compose([Validators.required, Validators.pattern('^(0[1-9]|1[0-2])\/([0-9]{2})$')])),
+          Validators.compose([Validators.required, Validators.pattern('^(0[1-9]|1[0-2])/\([0-9]{2})$')])),
       address: new FormControl('',
           Validators.compose([Validators.required])),
       city: new FormControl('',
