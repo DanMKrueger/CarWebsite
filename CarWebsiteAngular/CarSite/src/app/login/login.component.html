@@ -1,6 +1,7 @@
 
     <div *ngIf = "loginService.isUserLoggedIn()" class = "row pr-4">
-    <h3 class = "col">Welcome {{loginService.currentUser()}}</h3>
+    <h5 class = "col">Welcome {{loginService.currentUser()}}</h5>
+    <br />
     <button type="button" class='btn btn-outline-warning my-auto col' (click)='logout()' value="Logout">Logout</button>
     </div>
 
