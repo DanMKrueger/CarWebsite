@@ -1,4 +1,3 @@
-<div id="alertDiv"></div>
 <div class="container-fluid float-left shadowing">
   <h1 class="container shadowing car-page-font">{{response?.car_year}} {{response?.make}} {{response?.model}}</h1>
   <h2 class="container shadowing car-page-font">{{response?.price}}</h2>
@@ -10,7 +9,7 @@
     <td><p id="description" class="shadowing container">{{response?.description}}</p></td>
   </tr>
   <div class="buy-now-div">
-      <button type="button" class="btn btn-primary buy-now-button" (click)="toggleCollapse()">Buy Now!</button>
+      <button type="button" class="my-3 btn btn-primary buy-now-button" (click)="toggleCollapse()">Buy Now!</button>
   </div>
 
   <div class="container" *ngIf="!isCollapsed">
@@ -92,8 +91,8 @@
             </div>
       </div>
     </div>
-
-    <button type="submit" class="btn btn-success">Confirm</button>
+    <div id="alertDiv"></div>
+    <button type="submit" class="my-3 btn btn-success">Confirm</button>
 
   </form>
   </div>
