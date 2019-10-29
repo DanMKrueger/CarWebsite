@@ -10,6 +10,10 @@
       1px 1px 0 #000;
 }
 
+.cursor{
+  cursor: pointer;
+}
+
 .carImages{
     width: 75%;
     height: 75%;
