@@ -17,7 +17,9 @@
 .buy-now-button{
   position: relative;
   left: 40%;
+  cursor: pointer;
 }
+
 
 
 #description{

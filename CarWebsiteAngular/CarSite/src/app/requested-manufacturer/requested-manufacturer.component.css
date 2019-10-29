@@ -28,3 +28,6 @@
 .myTopDiv{
     align-content: center;
 }
+.click-car{
+  cursor: pointer;
+}

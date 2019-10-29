@@ -5,7 +5,7 @@
     <div *ngFor="let car of allCars" class="myContainerDivs col-4 animated fadeInUp">
 
             <p class="modelParagraphs shadowing p-2">{{ car?.model }}</p>
-            <img id='{{car?.id}}' src={{car.picture}} class="carImages p-2" (click)="manufacturerClicked(car.id)">
+            <img id='{{car?.id}}' src={{car.picture}} class="carImages p-2 click-car" (click)="manufacturerClicked(car.id)">
 
     </div>
 

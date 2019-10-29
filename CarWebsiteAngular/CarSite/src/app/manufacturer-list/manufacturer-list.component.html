@@ -2,7 +2,7 @@
     <div class="row" id="manufacturer-list">
         <div class="col d-inline" *ngFor="let manufacturer of manufacturers">
             <img
-            id = '{{manufacturer?.make}}' class="img-fluid"
+            id = '{{manufacturer?.make}}' class="img-fluid click-manufacturer"
             (mouseover) = "hovering = ($event.target.id)" (mouseout)="hovering = ''"
             (click) = manufacturerClicked(manufacturer.make)
             [ngClass] = "{'animated pulse infinite bg-light rounded' : hovering === manufacturer.make }"

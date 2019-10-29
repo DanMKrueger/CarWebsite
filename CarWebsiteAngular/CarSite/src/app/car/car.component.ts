@@ -79,9 +79,9 @@ export class CarComponent implements OnInit  {
   onSubmit(buyNowForm) {
     console.log(buyNowForm);
     if (buyNowForm.controls.firstName.status === 'INVALID') {
-      var x= document.getElementById('firstName');
+      var x = document.getElementById('firstName');
       x.classList.add('redBorder');
-    }else{
+    } else{
       var x= document.getElementById('firstName');
       x.classList.remove('redBorder');
     }
@@ -89,19 +89,19 @@ export class CarComponent implements OnInit  {
     if (buyNowForm.controls.lastName.status === 'INVALID') {
       var x= document.getElementById('lastName');
       x.classList.add('redBorder');
-    } else{
+    } else {
       var x= document.getElementById('lastName');
       x.classList.remove('redBorder');
     }
-    
+
     if (buyNowForm.controls.email.status === 'INVALID') {
-      var x= document.getElementById('email');
+      var x = document.getElementById('email');
       x.classList.add('redBorder');
     } else{
-      var x= document.getElementById('email');
+      var x = document.getElementById('email');
       x.classList.remove('redBorder');
     }
-    
+
     if (buyNowForm.controls.creditCard.status === 'INVALID') {
       var x= document.getElementById('creditCard');
       x.classList.add('redBorder');
@@ -109,7 +109,7 @@ export class CarComponent implements OnInit  {
       var x= document.getElementById('creditCard');
       x.classList.remove('redBorder');
     }
-    
+
     if (buyNowForm.controls.cvv.status === 'INVALID') {
       var x= document.getElementById('cvv');
       x.classList.add('redBorder');
@@ -117,7 +117,7 @@ export class CarComponent implements OnInit  {
       var x= document.getElementById('cvv');
       x.classList.remove('redBorder');
     }
-    
+
     if (buyNowForm.controls.creditCardDate.status === 'INVALID') {
       var x= document.getElementById('creditCardDate');
       x.classList.add('redBorder');
@@ -125,7 +125,7 @@ export class CarComponent implements OnInit  {
       var x= document.getElementById('creditCardDate');
       x.classList.remove('redBorder');
     }
-    
+
     if (buyNowForm.controls.address.status === 'INVALID') {
       var x= document.getElementById('address');
       x.classList.add('redBorder');
@@ -133,7 +133,7 @@ export class CarComponent implements OnInit  {
       var x= document.getElementById('address');
       x.classList.remove('redBorder');
     }
-    
+
     if (buyNowForm.controls.city.status === 'INVALID') {
       var x= document.getElementById('city');
       x.classList.add('redBorder');
@@ -141,7 +141,7 @@ export class CarComponent implements OnInit  {
       var x= document.getElementById('city');
       x.classList.remove('redBorder');
     }
-    
+
     if (buyNowForm.controls.state.status === 'INVALID') {
       var x= document.getElementById('state');
       x.classList.add('redBorder');
@@ -149,7 +149,7 @@ export class CarComponent implements OnInit  {
       var x= document.getElementById('state');
       x.classList.remove('redBorder');
     }
-    
+
     if (buyNowForm.controls.zip.status === 'INVALID') {
       var x= document.getElementById('zip');
       x.classList.add('redBorder');
