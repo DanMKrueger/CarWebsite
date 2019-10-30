@@ -10,7 +10,8 @@
 } */
 
 html, body { 
-    background: url('assets/background.jpg') no-repeat center fixed; 
+    /* background: url('assets/background.jpg') no-repeat center fixed;  */
+    background: url('https://timedotcom.files.wordpress.com/2014/05/vladstudio.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
